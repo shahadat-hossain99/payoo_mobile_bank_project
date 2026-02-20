@@ -49,7 +49,7 @@
           </div>
           <div class="balance-section">
             <h1 class="font-extrabold text-lg">
-              $ <span id="Balance"> 45000 </span>
+              $ <span id="balance"> 45000 </span>
             </h1>
             <p class="font-normal text-sm text-neutral/50">Available Balance</p>
           </div>
@@ -103,5 +103,57 @@
         </button>
       </div>
     </section>
+
+    <!-- cash out form -->
+
+    <section class="w-11/12 mx-auto py-3">
+      <h2 class="font-semibold text-lg mb-4">Add Money</h2>
+      <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label font-medium text-neutral-950"
+              >Agent Number</label
+            >
+            <input
+              id="Cashout-number"
+              maxlength="11"
+              minlength="11"
+              type="text"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Enter your 11 Digit number"
+            />
+            <br />
+            <label class="label font-medium text-neutral-950">Amount</label>
+            <input
+              id="cashout-amount"
+              type="number"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Enter your amount to withdraw"
+            />
+            <br />
+            <label class="label font-medium text-neutral-950"
+              >4 Digit Pin</label
+            >
+            <input
+              id="cashout-pin"
+              maxlength="4"
+              minlength="4"
+              type="password"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Enter 4 Digit Pin"
+            />
+            <div></div>
+            <button
+              id="withdraw-btn"
+              class="btn btn-primary mt-4 text-xl font-semibold py-4 rounded-full"
+            >
+              Withdraw Money
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/cashout.js"></script>
   </body>
 </html>
