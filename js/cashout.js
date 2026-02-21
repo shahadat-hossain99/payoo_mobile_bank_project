@@ -6,6 +6,10 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   const cashoutNumberInput = document.getElementById("Cashout-number");
   const cashoutNumber = cashoutNumberInput.value;
   console.log("cashoutNumber");
+  if (cashoutNumber.length !== "11") {
+    alert("Invalid Agent Number");
+    return;
+  }
 
   // 2. get the amount,validate, convert to number
   const cashoutAmountInput = document.getElementById("cashout-amount");
@@ -25,8 +29,23 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
 
     return;
   }
-  console.log("New Balance ", newBalance);
+
   // 5. get the pin amd verify
-  // 5.1 true ::> alert> set balance
-  // 5.2 false ::> alert> return
+
+  const cashoutPinInput = document.getElementById("cashout-pin");
+  const pin = cashoutPinInput.value;
+  console.log(pin);
+
+  if (pin == "1234") {
+    // 5.1 true ::> alert> set balance
+    alert("cash-out Successful");
+    console.log("New Balance ", newBalance);
+
+    balanceElement.innerText = newBalance;
+  } else {
+    // 5.2 false ::> alert> return
+
+    alert("Invalid pin number");
+    return;
+  }
 });
