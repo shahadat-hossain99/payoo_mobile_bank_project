@@ -103,7 +103,10 @@
           <img src="assets/opt-5.png" alt=" " />
           <p class="text-neutral/70 font-normal text-sm">Pay Bill</p>
         </button>
-        <button class="btn btn-soft flex-col h-full py-5 px-6 btn-primary">
+        <button
+          onclick="showOnly('history')"
+          class="btn btn-soft flex-col h-full py-5 px-6 btn-primary"
+        >
           <img src="assets/opt-6.png" alt=" " />
           <p class="text-neutral/70 font-normal text-sm">Transactions</p>
         </button>
@@ -231,6 +234,16 @@
             </button>
           </fieldset>
         </div>
+      </div>
+    </section>
+
+    <section id="history" class="w-11/12 mx-auto py-3 hidden">
+      <div class="flex justify-between">
+        <h2 class="font-semibold text-lg mb-4">Transactions</h2>
+        <a href="#" class="text-neutral/70 font-normal text-sm">View All</a>
+      </div>
+      <div id="history-container" class="space-y-5">
+        <!-- <div class="transaction-card p-5 bg-base-100"></div> -->
       </div>
     </section>
 

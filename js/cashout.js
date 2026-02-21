@@ -24,7 +24,7 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
     return;
   }
 
-  // 5. get the pin amd verify
+  // 5. get edthe pin amd verify
 
   const pin = getValueFromInput("cashout-pin");
   if (pin === "1234") {
@@ -33,6 +33,34 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
     console.log("New Balance :", newBalance);
 
     setBalance(newBalance);
+
+    // 1--- histor-container ke dhore nia asbo
+    const history = document.getElementById("history-container");
+
+    // 2--- new div create korbo
+
+    const newHistory = document.createElement("div");
+
+    // 3--- new div aa .innerHtml add korbo
+
+    newHistory.innerHTML = `
+    <div class="transaction-card p-5 bg-base-100">
+      <p>Money CashOuted: ${amount} tk</p>
+      <p>Time And Date : at ${new Date()}
+</p>
+      <p>Agent Number: ${agentNumber}</p>
+    </div>
+
+   `;
+
+    // <div class="transaction-card p-5 bg-base-100">
+    //     CashOut ${amount} doller Successfully to ${agentNumber} at ${new Date()}
+
+    // </div>
+    // `;
+
+    // 4--- new div append korbo
+    history.append(newHistory);
   } else {
     // 5.2 false ::> alert> return
     alert("Invalid pin");
